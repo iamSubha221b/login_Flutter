@@ -6,6 +6,7 @@ class Provider extends InheritedWidget{
 
 
   final bloc = Bloc();
+  final blocforotherwidget = Bloc();
 
 
   Provider({Key key , Widget child}) : super(key : key,child : child);
@@ -14,10 +15,7 @@ class Provider extends InheritedWidget{
 
   static Bloc of(context){
     return (context.inheritFromWidgetOfExactType(Provider) as Provider).bloc;
-
    // return (context.dependOnInheritedWidgetOfExactType(aspect: Provider) as Provider).bloc;
-
-
   }
 
 

@@ -4,8 +4,8 @@ import 'package:rxdart/rxdart.dart';
 
 class Bloc extends Object with Validators
 {
-//  final  _emailController = StreamController<String>.broadcast();
- // final _passwordController = StreamController<String>.broadcast();
+ // final  _emailController = StreamController<String>.broadcast();//
+//  final _passwordController = StreamController<String>.broadcast();// broadcast stream
 
   final  _emailController = BehaviorSubject<String>();
   final _passwordController = BehaviorSubject<String>();
@@ -22,6 +22,13 @@ class Bloc extends Object with Validators
   // retrieve stream
    get email => _emailController.stream.transform(validateemail);
   Stream<String> get password => _passwordController.stream.transform(validatePassword);
+
+
+
+
+
+
+
   Stream<bool> get submitValid => Observable.combineLatest2(email,password, (a, b) => true);
   
 
